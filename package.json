@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^17.3.6",
     "@angular/router": "^17.3.6",
     "@ngx-easy-ui/components": "0.0.1-next.beta.101",
-    "@ngx-easy-ui/themes": "0.0.1-next.1",
+    "@ngx-easy-ui/themes": "0.0.1-next.2",
     "ngx-mat-timepicker": "^17.1.0",
     "rxjs": "^7.8.1",
     "tslib": "^2.6.2",
