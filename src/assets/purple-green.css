@@ -1,0 +1,33 @@
+/* Error: Undefined function.
+ *    ,
+ * 92 |   @return typography.resolve-theme($theme, $resolver, 'supporting-text');
+ *    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   @material/tooltip/_plain-tooltip-theme.scss 92:11                    -resolve-theme-typography()
+ *   @material/tooltip/_plain-tooltip-theme.scss 86:5                     -resolve-theme()
+ *   @material/tooltip/_plain-tooltip-theme.scss 49:11                    theme()
+ *   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 17:7   @content
+ *   ../node_modules/@angular/material/core/style/_sass-utils.scss 19:7   current-selector-or-root()
+ *   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 16:5   base()
+ *   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 70:7   @content
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 350:7   @content
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 483:3   -check-duplicate-theme-styles-v0()
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 343:5   private-check-duplicate-theme-styles()
+ *   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 65:3   theme()
+ *   ../node_modules/@angular/material/core/theming/_all-theme.scss 48:5  @content
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 350:7   @content
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 483:3   -check-duplicate-theme-styles-v0()
+ *   ../node_modules/@angular/material/core/theming/_theming.scss 343:5   private-check-duplicate-theme-styles()
+ *   ../node_modules/@angular/material/core/theming/_all-theme.scss 44:3  all-component-themes()
+ *   purple-green.scss 30:3                                               root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined function.\a    \2577 \a 92 \2502    @return typography.resolve-theme($theme, $resolver, 'supporting-text');\a    \2502            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   @material/tooltip/_plain-tooltip-theme.scss 92:11                    -resolve-theme-typography()\a   @material/tooltip/_plain-tooltip-theme.scss 86:5                     -resolve-theme()\a   @material/tooltip/_plain-tooltip-theme.scss 49:11                    theme()\a   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 17:7   @content\a   ../node_modules/@angular/material/core/style/_sass-utils.scss 19:7   current-selector-or-root()\a   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 16:5   base()\a   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 70:7   @content\a   ../node_modules/@angular/material/core/theming/_theming.scss 350:7   @content\a   ../node_modules/@angular/material/core/theming/_theming.scss 483:3   -check-duplicate-theme-styles-v0()\a   ../node_modules/@angular/material/core/theming/_theming.scss 343:5   private-check-duplicate-theme-styles()\a   ../node_modules/@angular/material/tooltip/_tooltip-theme.scss 65:3   theme()\a   ../node_modules/@angular/material/core/theming/_all-theme.scss 48:5  @content\a   ../node_modules/@angular/material/core/theming/_theming.scss 350:7   @content\a   ../node_modules/@angular/material/core/theming/_theming.scss 483:3   -check-duplicate-theme-styles-v0()\a   ../node_modules/@angular/material/core/theming/_theming.scss 343:5   private-check-duplicate-theme-styles()\a   ../node_modules/@angular/material/core/theming/_all-theme.scss 44:3  all-component-themes()\a   purple-green.scss 30:3                                               root stylesheet";
+}

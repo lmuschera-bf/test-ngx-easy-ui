@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    overflow: auto;
+}
+
+.easy-ui-content {
+    display: contents;
+}
+
+.title {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6em;
+    border-bottom: 1px solid black;
+}

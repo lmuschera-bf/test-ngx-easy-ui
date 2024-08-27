@@ -1,0 +1,15 @@
+@if(formGroupDirective && type() === 'submit') {
+<!-- <button mat-raised-button color="primary" [disabled]="!formGroupDirective.form.valid" [type]="type">
+    <ng-content *ngTemplateOutlet="test"></ng-content>
+    <ng-content></ng-content>
+</button> -->
+} @else {
+
+}
+<button mat-raised-button color="primary" [type]="type">
+    <ng-content></ng-content>
+</button>
+
+<ng-template #test>
+    prova
+</ng-template>

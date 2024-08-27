@@ -1,0 +1,17 @@
+:host {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    mat-toolbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+[currenttheme] {
+    background: beige;
+}

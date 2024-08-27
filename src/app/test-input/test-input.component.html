@@ -1,0 +1,31 @@
+<h1 class="title">FORM</h1>
+
+<easy-form #form class="easy-ui-content" (easySubmit)="submit($event)">
+    <!-- <div [grid]="3" [gap]="10"> -->
+    <div [gridTemplate]="templates">
+        <control text name="text" label="text" gridArea="text" />
+        <control integer name="integer" label="integer" gridArea="integer" />
+        <control float required name="float" label="float" gridArea="float" />
+        <control password name="password" label="password" gridArea="password" />
+        <control text-area name="textArea" label="text area" gridArea="textArea" />
+        <control date name="date" label="date" gridArea="date" />
+        <control date-range name="dateRange" label="date range" gridArea="dateRange" />
+        <control time name="time" label="time" gridArea="time"></control>
+        <control select name="select" label="select" gridArea="select">
+            <ng-template select-option [controller]="testController" let-item="item">{{item | json}}</ng-template>
+        </control>
+        <control multi-select required name="multiSelect" label="multi select" gridArea="multiSelect">
+            <ng-template select-option [controller]="testController" let-item="item">{{item | json}}</ng-template>
+            <ng-template multi-select-chip let-item="item">{{item | json}}</ng-template>
+        </control>
+        <control check name="check" label="check" gridArea="check"></control>
+        <control check toggle name="toggle" label="toggle" gridArea="toggle"></control>
+    </div>
+
+    <button [disabled]="!form.valid()" mat-raised-button color="primary" type="submit">click</button>
+
+</easy-form>
+
+<h1 class="title">PANEL</h1>
+
+<button mat-raised-button color="primary" (click)="nuovo()">panel</button>
