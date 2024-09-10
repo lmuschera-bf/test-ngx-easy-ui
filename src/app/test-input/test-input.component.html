@@ -2,7 +2,7 @@
 
 <easy-form #form class="easy-ui-content" (easySubmit)="submit($event)">
     <!-- <div [grid]="3" [gap]="10"> -->
-    <div [gridTemplate]="templates">
+    <div [gridTemplate]="templates" [columnGap]="10">
         <control text name="text" label="text" gridArea="text" />
         <control integer name="integer" label="integer" gridArea="integer" />
         <control float required name="float" label="float" gridArea="float" />
@@ -19,10 +19,14 @@
             <ng-template multi-select-chip let-item="item">{{item | json}}</ng-template>
         </control>
         <control check name="check" label="check" gridArea="check"></control>
-        <control check toggle name="toggle" label="toggle" gridArea="toggle"></control>
+        <control #check check toggle name="toggle" label="toggle" gridArea="toggle"></control>
+
+        @if(check.value()) {
+        <control text name="text2" label="text2" gridArea="text2" />
+        }
     </div>
 
-    <button [disabled]="!form.valid()" mat-raised-button color="primary" type="submit">click</button>
+    <easy-button [attr.disabled]="!form.valid() ? '' : null" easy-button-stroked type="submit">click</easy-button>
 
 </easy-form>
 

@@ -13,5 +13,11 @@
 }
 
 [currenttheme] {
-    background: beige;
+    background: #3c5ba9;
+    color: white;
+}
+
+[currenttheme]:hover {
+    background: #3c5ba9;
+    color: inherit;
 }

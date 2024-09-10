@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EasyButtonComponent } from './easy-button/easy-button.component';
+import {EasyButtonComponent} from '@ngx-easy-ui/components';
 
 @Component({
   selector: 'app-test-bottone',

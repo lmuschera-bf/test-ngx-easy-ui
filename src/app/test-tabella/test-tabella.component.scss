@@ -5,5 +5,11 @@
 
     easy-table {
         width: 100%;
+
+        .menu-icon {
+            /* da fare un componente per il tasto di una tabella */
+            --mat-icon-color: red;
+            cursor: pointer;
+        }
     }
 }

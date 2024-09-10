@@ -1,8 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, ViewChild, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DimensionTemplates, EasyCheckModule, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
-import { EasyButtonComponent } from '../test-bottone/easy-button/easy-button.component';
+import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
 import { ProvaAttributiComponent } from './prova-attributi/prova-attributi.component';
 
 export type SelectSample = {
@@ -21,8 +20,7 @@ const values = {
   multiSelect: [1, 2],
   toggle: true,
   time: '01:45', // usere formato hh:mm per le stringhe
-  textArea: `asgsgasdg
-  asd`,
+  textArea: `asgsg`,
   password: 'password'
 };
 
