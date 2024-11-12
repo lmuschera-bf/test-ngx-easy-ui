@@ -8,6 +8,6 @@ import {EasyButtonComponent} from '@ngx-easy-ui/components';
   templateUrl: './test-bottone.component.html',
   styleUrl: './test-bottone.component.scss'
 })
-export class TestBottoneComponent {
+export default class TestBottoneComponent {
 
 }

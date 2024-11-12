@@ -1,7 +1,7 @@
 import { JsonPipe } from '@angular/common';
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, Signal, ViewChild, WritableSignal, computed, effect, inject, signal, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
+import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyUIFullFillDirective, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager, EasyControl, EasyControlComponent } from '@ngx-easy-ui/components';
 import { ProvaAttributiComponent } from './prova-attributi/prova-attributi.component';
 
 export type SelectSample = {
@@ -35,6 +35,35 @@ function coloredLog(label: string, value: any) {
   console.info(...['%c' + label.toLowerCase(), labelStyle.join(';')], value)
 }
 
+const templateXSMALLBase = [['text', 'text'],
+['integer', 'integer'],
+['float', 'float'],
+['password', 'password'],
+['textArea', 'textArea'],
+['date', 'date'],
+['dateRange', 'dateRange'],
+['time', 'time'],
+['select', 'select'],
+['multiSelect', 'multiSelect'],
+['check', 'toggle']];
+
+const templateSMALLBase = [
+  ['text', 'integer'],
+  ['float', '.'],
+  ['password', '.'],
+  ['textArea', 'date'],
+  ['dateRange', 'time'],
+  ['select', 'multiSelect'],
+  ['check', 'toggle'],
+];
+
+const templateMEDIUMBase = [
+  ['text', 'integer', 'float'],
+  ['password', 'textArea', 'date'],
+  ['dateRange', 'time', 'select'],
+  ['multiSelect', 'check', 'toggle']
+];
+
 @Component({
   selector: 'test-pannello',
   template: '<button (click)="chiudi()">chiudi</button>',
@@ -53,17 +82,20 @@ export class Pannello {
   providers: [providePanelManager()],
   imports: [MatButtonModule, EasyButtonComponent, EasyControlModule, EasyInputModule,
     EasyFormModule, EasySelectModule, JsonPipe, EasySelectOptionDirective, EasyCheckModule,
-    GridModule, EasyTemporalModule, ProvaAttributiComponent],
+    GridModule, EasyTemporalModule, ProvaAttributiComponent, EasyUIFullFillDirective],
   templateUrl: './test-input.component.html',
   styleUrl: './test-input.component.scss'
 })
-export class TestInputComponent {
+export default class TestInputComponent {
 
   @ViewChild('form', { static: true }) form!: EasyFormComponent;
-
+  
   private readonly panelManager: PanelManager = inject(PANEL_MANAGER);
 
-  public readonly templates: DimensionTemplates = new DimensionTemplates();
+  private readonly toggle: Signal<EasyControlComponent | undefined> = viewChild('toggle');
+  private readonly toggleValue: Signal<boolean> = computed(() => this.toggle()?.value());
+  protected readonly templates: Signal<DimensionTemplates> = computed(() => this.toggle()?.value() ? new DimensionTemplates() : new DimensionTemplates());
+
   public readonly testController: SelectController<SelectSample, number>;
 
   print(value: unknown) { console.info(value) }
@@ -75,43 +107,24 @@ export class TestInputComponent {
   }
 
   constructor() {
-    console.dir(window.innerWidth);
     this.testController = new SelectController(['uno', 'due', 'tre'].map((value, id) => {
       return { id, value };
     }), (valore) => {
       return valore.id
     }, (valore) => valore.value);
 
-    this.templates.add(TipoBreakPoint.XSMALL, GridTemplate.from([
-      ['text', 'text'],
-      ['integer', 'integer'],
-      ['float', 'float'],
-      ['password', 'password'],
-      ['textArea', 'textArea'],
-      ['date', 'date'],
-      ['dateRange', 'dateRange'],
-      ['time', 'time'],
-      ['select', 'select'],
-      ['multiSelect', 'multiSelect'],
-      ['check', 'toggle'],
-    ]));
-
-    this.templates.add(TipoBreakPoint.SMALL, GridTemplate.from([
-      ['text', 'integer'],
-      ['float', '.'],
-      ['password', '.'],
-      ['textArea', 'date'],
-      ['dateRange', 'time'],
-      ['select', 'multiSelect'],
-      ['check', 'toggle'],
-    ]));
-
-    this.templates.add(TipoBreakPoint.MEDIUM, GridTemplate.from([
-      ['text', 'integer', 'float'],
-      ['password', 'textArea', 'date'],
-      ['dateRange', 'time', 'select'],
-      ['multiSelect', 'check', 'toggle'],
-    ]));
+    effect(() => {
+      const value: boolean = this.toggleValue();
+      if (value) {
+        this.templates().add(TipoBreakPoint.XSMALL, GridTemplate.from([...templateXSMALLBase, ['text2', '.']]));
+        this.templates().add(TipoBreakPoint.SMALL, GridTemplate.from([...templateSMALLBase, ['.', 'text2']]));
+        this.templates().add(TipoBreakPoint.MEDIUM, GridTemplate.from([...templateMEDIUMBase, ['.', 'text2', 'text2']]));
+      } else {
+        this.templates().add(TipoBreakPoint.XSMALL, GridTemplate.from(templateXSMALLBase));
+        this.templates().add(TipoBreakPoint.SMALL, GridTemplate.from(templateSMALLBase));
+        this.templates().add(TipoBreakPoint.MEDIUM, GridTemplate.from(templateMEDIUMBase));
+      }
+    });
   }
 
   public selectSampleValue(item: SelectSample): string { return item.value }

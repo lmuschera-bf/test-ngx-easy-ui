@@ -19,3 +19,14 @@
     font-size: 1.6em;
     border-bottom: 1px solid black;
 }
+
+.test-container {
+    display: flex;
+    // background-color:#2a8c8d;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%; //più di 100vw fa apparire una scrollbar in basso quindi evitar di far come prima mettend o 115vw
+    box-sizing: border-box;
+    /* Optional padding */
+}

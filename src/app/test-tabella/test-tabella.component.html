@@ -1,5 +1,6 @@
-<easy-table [dataSource]="dataSource" [footerSource]="footerSource" easy-table-select [selectList]="initialSelection()"
-    (easyTableSelectionChange)="selectionChange($event)">
+<easy-table [easyTableDataSource]="dataSource" [footerSource]="footerSource" easy-table-select [selectList]="initialSelection()"
+    (easyTableSelectionChange)="selectionChange($event)" easy-table-row-color [easyTableRowColorFN]="fn()">
+
     <easy-table-column name="counter_riga" easyTableColumnOnlyNecessarySpace>
         <ng-template easy-table-column-header></ng-template>
         <ng-template easy-table-column-cell let-rowCounter="rowCounter">
@@ -7,30 +8,44 @@
         </ng-template>
         <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
     </easy-table-column>
+
     <easy-table-column name="menu_riga" easyTableColumnOnlyNecessarySpace>
         <ng-template easy-table-column-header></ng-template>
         <ng-template easy-table-column-cell let-value="value" let-ri="rowIndex" let-rc="rowCounter">
             <div easyUIFullFill flexCenter easyUIMouseOrTouchEventTrap>
-                <mat-icon class="menu-icon" (click)="grab($event, ri, rc)" aria-hidden="false" aria-label="menu"
+                <mat-icon (click)="grab($event, ri, rc)" class="menu-icon" aria-hidden="false" aria-label="menu"
                     fontIcon="menu"></mat-icon>
             </div>
         </ng-template>
         <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
     </easy-table-column>
-    <easy-table-column easy-column-sortable name="nome">
+
+    <easy-table-column easy-column-sortable name="nome" easyTableColumnSelectable>
         <ng-template easy-table-column-header>Nome</ng-template>
-        <ng-template easy-table-column-cell let-value="value" let-ri="rowIndex">{{ value
+        <ng-template easy-table-column-cell let-value="value" let-ri="rowIndex" (click)="grab($event)">{{ value
             }}</ng-template>
         <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
     </easy-table-column>
+
+    <!-- Colonna calcolata -->
+    <easy-table-column easy-column-sortable name="nome_cognome" easyTableColumnSelectable>
+        <ng-template easy-table-column-header>Nominativo</ng-template>
+        <ng-template easy-table-column-cell let-row="row">{{ row.nome }} {{ row.cognome
+            }}</ng-template>
+        <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
+    </easy-table-column>
+
     <easy-table-column name="cognome">
         <ng-template easy-table-column-header>Cognome</ng-template>
         <ng-template easy-table-column-cell let-value="value">{{ value }}</ng-template>
     </easy-table-column>
+
     <easy-table-column easy-column-sortable name="varie" easy-column-string>
         <ng-template easy-table-column-header>Varie</ng-template>
     </easy-table-column>
+
     <easy-table-column name="test" headerLabel="Test" easy-column-string></easy-table-column>
+
     <easy-table-column easy-column-sortable name="test2" headerLabel="Test 2" easy-column-number
         [precision]="2"></easy-table-column>
 </easy-table>

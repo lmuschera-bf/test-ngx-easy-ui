@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+}
+
+.data-source {
+    overflow-y: scroll;
+    height: 150px;
+    padding: 10px 20px;
+    background: lightgrey;
+}
+
+.placeholder {
+    --width: 20px;
+    --negative-width: calc(-1 * var(--width));
+    width: var(--width);
+    transform: translateX(var(--negative-width)) translateY(calc(var(--negative-width) / 2));
+    height: calc(var(--width) - (var(--mat-tree-node-text-size) / 2));
+    /* background: azure; */
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.easy-tree-node{
+    
+}

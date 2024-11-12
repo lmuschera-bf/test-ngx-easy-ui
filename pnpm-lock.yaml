@@ -39,11 +39,11 @@ importers:
         specifier: ^18.2.1
         version: 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.1(@angular/animations@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
       '@ngx-easy-ui/components':
-        specifier: 0.0.1-next.beta.240
-        version: 0.0.1-next.beta.240(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))
+        specifier: 0.0.1-next.beta.322
+        version: 0.0.1-next.beta.322(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))
       '@ngx-easy-ui/themes':
-        specifier: 0.0.1-next.10
-        version: 0.0.1-next.10(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))
+        specifier: 0.0.1-next.12
+        version: 0.0.1-next.12(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))
       ngx-mat-timepicker:
         specifier: ^18.0.0
         version: 18.0.0(qpcxq3azvy72gknb5wo4lp3r4e)
@@ -1441,8 +1441,8 @@ packages:
       typescript: '>=5.4 <5.6'
       webpack: ^5.54.0
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.240':
-    resolution: {integrity: sha512-8Qhp6hY1BCS7rdK2fhLNFY4e9lU2rmqFvkK2lKljTciZv0KU40pql9G2qHftNf8zCw2vzhXRCxjiBB2EnWxXqw==}
+  '@ngx-easy-ui/components@0.0.1-next.beta.322':
+    resolution: {integrity: sha512-w8ivMjzaR5tfAJwvw/zyaoKzsTSSFsfcOjVQ5N128cSY3JrzIJy5Pk/DjhPEEgcpegbeIOSSmY0haP/ya2q0Vw==}
     peerDependencies:
       '@angular/cdk': ^18.2.1
       '@angular/common': ^18.2.1
@@ -1450,8 +1450,8 @@ packages:
       '@angular/material': ^18.2.1
       ngx-mat-timepicker: ^18.0.0
 
-  '@ngx-easy-ui/themes@0.0.1-next.10':
-    resolution: {integrity: sha512-dBGuzSt8/rIolUD7NgLOeD4+M4yHPK6ZwgJayFIA56s3PfnRaGfZpICzNBffFJuKx6LGSbcw5sQO/Ybo9d/7BA==}
+  '@ngx-easy-ui/themes@0.0.1-next.12':
+    resolution: {integrity: sha512-nGbcSI9q2jGuJ9QUNd0M36ea67PH10kAPCJOSz8LAzlCZS0T93hl6fr3xvkKqL9OjoaJq4X6JF0YjZtg27RJUg==}
     peerDependencies:
       '@angular/cdk': ^18.2.1
       '@angular/common': ^18.2.1
@@ -4189,6 +4189,9 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
   tuf-js@2.2.0:
     resolution: {integrity: sha512-ZSDngmP1z6zw+FIkIBjvOp/II/mIub/O7Pp12j1WNsiCpg5R5wAc//i555bBQsE44O94btLt0xM/Zr2LQjwdCg==}
     engines: {node: ^16.14.0 || >=18.0.0}
@@ -5975,21 +5978,21 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@jsonjoy.com/base64@1.1.2(tslib@2.6.3)':
+  '@jsonjoy.com/base64@1.1.2(tslib@2.8.1)':
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
-  '@jsonjoy.com/json-pack@1.1.0(tslib@2.6.3)':
+  '@jsonjoy.com/json-pack@1.1.0(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/base64': 1.1.2(tslib@2.6.3)
-      '@jsonjoy.com/util': 1.3.0(tslib@2.6.3)
+      '@jsonjoy.com/base64': 1.1.2(tslib@2.8.1)
+      '@jsonjoy.com/util': 1.3.0(tslib@2.8.1)
       hyperdyperid: 1.2.0
-      thingies: 1.21.0(tslib@2.6.3)
-      tslib: 2.6.3
+      thingies: 1.21.0(tslib@2.8.1)
+      tslib: 2.8.1
 
-  '@jsonjoy.com/util@1.3.0(tslib@2.6.3)':
+  '@jsonjoy.com/util@1.3.0(tslib@2.8.1)':
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
@@ -6040,22 +6043,22 @@ snapshots:
       typescript: 5.5.4
       webpack: 5.93.0(esbuild@0.23.0)
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.240(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))':
+  '@ngx-easy-ui/components@0.0.1-next.beta.322(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))':
     dependencies:
       '@angular/cdk': 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/common': 18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/core': 18.2.1(rxjs@7.8.1)(zone.js@0.14.10)
       '@angular/material': 18.2.1(xf4bg26sxibjwctkyum75pshta)
       ngx-mat-timepicker: 18.0.0(qpcxq3azvy72gknb5wo4lp3r4e)
-      tslib: 2.6.3
+      tslib: 2.8.1
 
-  '@ngx-easy-ui/themes@0.0.1-next.10(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))':
+  '@ngx-easy-ui/themes@0.0.1-next.12(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))':
     dependencies:
       '@angular/cdk': 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/common': 18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/core': 18.2.1(rxjs@7.8.1)(zone.js@0.14.10)
       '@angular/material': 18.2.1(xf4bg26sxibjwctkyum75pshta)
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -7840,7 +7843,7 @@ snapshots:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.6.3
+      tslib: 2.8.1
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -7967,10 +7970,10 @@ snapshots:
 
   memfs@4.11.1:
     dependencies:
-      '@jsonjoy.com/json-pack': 1.1.0(tslib@2.6.3)
-      '@jsonjoy.com/util': 1.3.0(tslib@2.6.3)
-      tree-dump: 1.0.2(tslib@2.6.3)
-      tslib: 2.6.3
+      '@jsonjoy.com/json-pack': 1.1.0(tslib@2.8.1)
+      '@jsonjoy.com/util': 1.3.0(tslib@2.8.1)
+      tree-dump: 1.0.2(tslib@2.8.1)
+      tslib: 2.8.1
 
   merge-descriptors@1.0.1: {}
 
@@ -8977,9 +8980,9 @@ snapshots:
       commander: 2.20.3
       source-map-support: 0.5.21
 
-  thingies@1.21.0(tslib@2.6.3):
+  thingies@1.21.0(tslib@2.8.1):
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   thunky@1.1.0: {}
 
@@ -8997,9 +9000,9 @@ snapshots:
 
   toidentifier@1.0.1: {}
 
-  tree-dump@1.0.2(tslib@2.6.3):
+  tree-dump@1.0.2(tslib@2.8.1):
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   tree-kill@1.2.2: {}
 
@@ -9008,6 +9011,8 @@ snapshots:
   tslib@2.6.2: {}
 
   tslib@2.6.3: {}
+
+  tslib@2.8.1: {}
 
   tuf-js@2.2.0:
     dependencies:

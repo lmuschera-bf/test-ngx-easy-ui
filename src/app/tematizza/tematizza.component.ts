@@ -9,7 +9,7 @@ import { EasyTheme, EasyThemeService, ProvidedThemeName, getEasyTheme } from '@n
   templateUrl: './tematizza.component.html',
   styleUrl: './tematizza.component.scss'
 })
-export class TematizzaComponent {
+export default class TematizzaComponent {
 
   public readonly temi: EasyTheme[] = Object.entries(ProvidedThemeName).map(entry => getEasyTheme(entry[1]));
   private readonly easyThemeService: EasyThemeService = inject(EasyThemeService);
