@@ -1,5 +1,37 @@
-<easy-table [easyTableDataSource]="dataSource" [footerSource]="footerSource" easy-table-select [selectList]="initialSelection()"
-    (easyTableSelectionChange)="selectionChange($event)" easy-table-row-color [easyTableRowColorFN]="fn()">
+<div class="range_container">
+    <label [for]="range">Riga</label>
+    <input #range type="range" [min]="0" [max]="dataSource.length" [value]="0" class="slider" (input)="none()">
+    <span>{{range.value}}</span>
+</div>
+
+<div class="checkbox_container">
+    <label [for]="toggle">toggle</label>
+    <input #toggle type="checkbox" name="check" [checked]="true" (click)="onlyOne(toggle)">
+    <label [for]="select">select</label>
+    <input #select type="checkbox" name="check" (click)="onlyOne(select)">
+    <label [for]="unselect">unselect</label>
+    <input #unselect type="checkbox" name="check" (click)="onlyOne(unselect)">
+</div>
+
+<div class="buttons-container">
+    @for(name of easytable.columnsName(); track name) {
+    @if(toggle.checked) {
+    <button (click)="easytable.toggleCell(parseInt(range.value), name)">{{name}}</button>
+    }
+    @else if(select.checked) {
+    <button (click)="easytable.setSelectedCell(parseInt(range.value), name, true)">{{name}}</button>
+    }
+    @else if(unselect.checked) {
+    <button (click)="easytable.setSelectedCell(parseInt(range.value), name, false)">{{name}}</button>
+    }
+    }
+</div>
+
+<easy-table-paginator #paginator [pageSizeOptions]="[5, 10]"></easy-table-paginator>
+
+<easy-table #easytable [easyTableDataSource]="dataSourceWithPagination" [footerSource]="footerSource" easy-table-select
+    [selectList]="initialSelection()" (easyTableSelectionChange)="selectionChange($event)" easy-table-row-color
+    [easyTableRowColorFN]="rowColorFN()">
 
     <easy-table-column name="counter_riga" easyTableColumnOnlyNecessarySpace>
         <ng-template easy-table-column-header></ng-template>
@@ -28,7 +60,7 @@
     </easy-table-column>
 
     <!-- Colonna calcolata -->
-    <easy-table-column easy-column-sortable name="nome_cognome" easyTableColumnSelectable>
+    <easy-table-column name="nome_cognome" easyTableColumnSelectable>
         <ng-template easy-table-column-header>Nominativo</ng-template>
         <ng-template easy-table-column-cell let-row="row">{{ row.nome }} {{ row.cognome
             }}</ng-template>
@@ -47,5 +79,5 @@
     <easy-table-column name="test" headerLabel="Test" easy-column-string></easy-table-column>
 
     <easy-table-column easy-column-sortable name="test2" headerLabel="Test 2" easy-column-number
-        [precision]="2"></easy-table-column>
+        easyTableColumnSelectable [easyTableCellColorFN]="cellColorFN()" [precision]="2"></easy-table-column>
 </easy-table>

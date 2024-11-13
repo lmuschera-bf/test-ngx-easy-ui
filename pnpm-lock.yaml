@@ -39,11 +39,11 @@ importers:
         specifier: ^18.2.1
         version: 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@18.2.1(@angular/animations@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
       '@ngx-easy-ui/components':
-        specifier: 0.0.1-next.beta.322
-        version: 0.0.1-next.beta.322(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))
+        specifier: 0.0.1-next.beta.361
+        version: 0.0.1-next.beta.361(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))
       '@ngx-easy-ui/themes':
-        specifier: 0.0.1-next.12
-        version: 0.0.1-next.12(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))
+        specifier: 0.0.1-next.13
+        version: 0.0.1-next.13(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))
       ngx-mat-timepicker:
         specifier: ^18.0.0
         version: 18.0.0(qpcxq3azvy72gknb5wo4lp3r4e)
@@ -1441,8 +1441,8 @@ packages:
       typescript: '>=5.4 <5.6'
       webpack: ^5.54.0
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.322':
-    resolution: {integrity: sha512-w8ivMjzaR5tfAJwvw/zyaoKzsTSSFsfcOjVQ5N128cSY3JrzIJy5Pk/DjhPEEgcpegbeIOSSmY0haP/ya2q0Vw==}
+  '@ngx-easy-ui/components@0.0.1-next.beta.361':
+    resolution: {integrity: sha512-C2goH1k2vz7rwnSehM5UAtO3l/yfDt/eYvbjkQu0AzZmrvr7QzO+kVXQfj1jQGIK8mRfUMyqjI8etl2ptcvA/w==}
     peerDependencies:
       '@angular/cdk': ^18.2.1
       '@angular/common': ^18.2.1
@@ -1450,8 +1450,8 @@ packages:
       '@angular/material': ^18.2.1
       ngx-mat-timepicker: ^18.0.0
 
-  '@ngx-easy-ui/themes@0.0.1-next.12':
-    resolution: {integrity: sha512-nGbcSI9q2jGuJ9QUNd0M36ea67PH10kAPCJOSz8LAzlCZS0T93hl6fr3xvkKqL9OjoaJq4X6JF0YjZtg27RJUg==}
+  '@ngx-easy-ui/themes@0.0.1-next.13':
+    resolution: {integrity: sha512-3Etys6dhe7bg5L4qxxgJZMNQZ/spu62V/v1Zna5dFqqla9xQsF5V/A4qwrBqSOF0g3496kUt5Nb/HL2isztUrA==}
     peerDependencies:
       '@angular/cdk': ^18.2.1
       '@angular/common': ^18.2.1
@@ -6043,7 +6043,7 @@ snapshots:
       typescript: 5.5.4
       webpack: 5.93.0(esbuild@0.23.0)
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.322(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))':
+  '@ngx-easy-ui/components@0.0.1-next.beta.361(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))(ngx-mat-timepicker@18.0.0(qpcxq3azvy72gknb5wo4lp3r4e))':
     dependencies:
       '@angular/cdk': 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/common': 18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
@@ -6052,7 +6052,7 @@ snapshots:
       ngx-mat-timepicker: 18.0.0(qpcxq3azvy72gknb5wo4lp3r4e)
       tslib: 2.8.1
 
-  '@ngx-easy-ui/themes@0.0.1-next.12(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))':
+  '@ngx-easy-ui/themes@0.0.1-next.13(@angular/cdk@18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(@angular/material@18.2.1(xf4bg26sxibjwctkyum75pshta))':
     dependencies:
       '@angular/cdk': 18.2.1(@angular/common@18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@angular/common': 18.2.1(@angular/core@18.2.1(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
