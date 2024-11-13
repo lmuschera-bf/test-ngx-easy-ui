@@ -27,7 +27,7 @@
     }
 </div>
 
-<easy-table-paginator #paginator [pageSizeOptions]="[5, 10]"></easy-table-paginator>
+<easy-table-paginator #paginator [pageSizeOptions]="[5,1,2,3,4,6,7,8,9,10]"></easy-table-paginator>
 
 <easy-table #easytable [easyTableDataSource]="dataSourceWithPagination" [footerSource]="footerSource" easy-table-select
     [selectList]="initialSelection()" (easyTableSelectionChange)="selectionChange($event)" easy-table-row-color

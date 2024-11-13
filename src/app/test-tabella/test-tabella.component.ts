@@ -11,8 +11,6 @@ type TestTable = {
   test2: number;
 }
 
-
-
 @Component({
   selector: 'app-test-tabella',
   standalone: true,
@@ -44,7 +42,7 @@ export default class TestTabellaComponent {
   protected readonly cellSelectionParams: Signal<{ rowIndex: number, columnName: string }> = signal({ rowIndex: 2, columnName: 'test2' });
 
   private readonly paginator: Signal<EasyTablePaginatorComponent<TestTable>> = viewChild.required('paginator');
-
+  
   protected dataSource: TestTable[] = [
     { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
     { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
