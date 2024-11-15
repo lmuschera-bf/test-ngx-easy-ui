@@ -1,7 +1,7 @@
 import { NgStyle } from '@angular/common';
-import { Component, effect, signal, Signal, viewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, signal, Signal, viewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { EasyTableCellColorFN, EasyTableComponent, EasyTableDataSource, EasyTableDataSourceDirective, EasyTableModule, EasyTableRowColorFN, EasyTablePaginatorComponent, EasyTableRowSelection, EasyUIClickTrap, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyTableCellColorFN, EasyTableComponent, EasyTableDataSource, EasyTableDataSourceDirective, EasyTableModule, EasyTablePaginatorComponent, EasyTableRowColorFN, EasyTableSelectableRow, EasyUIClickTrap, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
 
 type TestTable = {
   nome: string;
@@ -14,9 +14,9 @@ type TestTable = {
 @Component({
   selector: 'app-test-tabella',
   standalone: true,
-  imports: [EasyTableModule, MatIconModule, EasyUIFullFillDirective, EasyUIClickTrap, NgStyle, EasyTableDataSourceDirective],
+  imports: [EasyTableModule, MatIconModule, EasyUIFullFillDirective, EasyUIClickTrap, NgStyle, EasyTableDataSourceDirective, EasyTableSelectableRow],
   templateUrl: './test-tabella.component.html',
-  styleUrl: './test-tabella.component.scss'
+  styleUrls: ['./test-tabella.component.scss', './range.scss']
 })
 export default class TestTabellaComponent {
 
@@ -42,7 +42,7 @@ export default class TestTabellaComponent {
   protected readonly cellSelectionParams: Signal<{ rowIndex: number, columnName: string }> = signal({ rowIndex: 2, columnName: 'test2' });
 
   private readonly paginator: Signal<EasyTablePaginatorComponent<TestTable>> = viewChild.required('paginator');
-  
+
   protected dataSource: TestTable[] = [
     { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
     { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
@@ -130,10 +130,6 @@ export default class TestTabellaComponent {
         this.paginator().bindToDataSource(this.dataSourceWithPagination);
       }
     });
-  }
-
-  protected selectionChange(value: EasyTableRowSelection<TestTable>) {
-    console.dir(value);
   }
 
   protected grab(...values: any[]) {

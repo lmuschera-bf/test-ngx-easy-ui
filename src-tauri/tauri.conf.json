@@ -5,7 +5,7 @@
   "build": {
     "frontendDist": "../dist/test-ngx-easy-ui/browser",
     "devUrl": "http://localhost:4200",
-    "beforeDevCommand": "pnpm run start",
+    "beforeDevCommand": "pnpm run siut",
     "beforeBuildCommand": "pnpm run build"
   },
   "app": {
