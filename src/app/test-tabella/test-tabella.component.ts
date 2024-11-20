@@ -1,7 +1,6 @@
-import { NgStyle } from '@angular/common';
-import { AfterViewInit, Component, effect, signal, Signal, viewChild } from '@angular/core';
+import { Component, signal, Signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { EasyTableCellColorFN, EasyTableComponent, EasyTableDataSource, EasyTableDataSourceDirective, EasyTableModule, EasyTablePaginatorComponent, EasyTableRowColorFN, EasyTableSelectableRow, EasyUIClickTrap, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableRowColorFN, EasyUIClickTrap, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
 
 type TestTable = {
   nome: string;
@@ -14,7 +13,7 @@ type TestTable = {
 @Component({
   selector: 'app-test-tabella',
   standalone: true,
-  imports: [EasyTableModule, MatIconModule, EasyUIFullFillDirective, EasyUIClickTrap, NgStyle, EasyTableDataSourceDirective, EasyTableSelectableRow],
+  imports: [EasyTableModule, EasyUIFullFillDirective, EasyUIClickTrap, MatIconModule],
   templateUrl: './test-tabella.component.html',
   styleUrls: ['./test-tabella.component.scss', './range.scss']
 })
@@ -35,13 +34,7 @@ export default class TestTabellaComponent {
     })
   }
 
-  // TODO lmuschera aggiungere esempio con EasyTableDataSource
-
-  protected readonly easyTable: Signal<EasyTableComponent<TestTable>> = viewChild.required('easytable');
-
   protected readonly cellSelectionParams: Signal<{ rowIndex: number, columnName: string }> = signal({ rowIndex: 2, columnName: 'test2' });
-
-  private readonly paginator: Signal<EasyTablePaginatorComponent<TestTable>> = viewChild.required('paginator');
 
   protected dataSource: TestTable[] = [
     { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
@@ -75,6 +68,8 @@ export default class TestTabellaComponent {
   ];
 
   protected dataSourceWithPagination: EasyTableDataSource<TestTable> = new EasyTableDataSource(this.dataSource);
+
+  public readonly initialSelection: Signal<TestTable[]> = signal(this.dataSource.filter((_, i) => i % 2 === 0));
 
   protected footerSource: TestTable = {
     nome: '',
@@ -121,16 +116,6 @@ export default class TestTabellaComponent {
     }
     return {};
   });
-
-  public readonly initialSelection: Signal<TestTable[]> = signal(this.dataSource.filter((_, i) => i % 2 === 0));
-
-  constructor() {
-    effect(() => {
-      if (this.paginator().ready()) {
-        this.paginator().bindToDataSource(this.dataSourceWithPagination);
-      }
-    });
-  }
 
   protected grab(...values: any[]) {
     console.log('values', values);

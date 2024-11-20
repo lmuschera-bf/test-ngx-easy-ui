@@ -5,19 +5,19 @@
     display: flex;
     padding: 15px;
 
-    button {
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        background-color: #3c5ba9;
-        color: white;
-        cursor: pointer;
-    }
-
     .buttons-container {
         display: flex;
         gap: 15px;
         justify-content: space-between;
+
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #3c5ba9;
+            color: white;
+            cursor: pointer;
+        }
 
         button {
             flex: 1;

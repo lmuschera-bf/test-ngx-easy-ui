@@ -1,38 +1,8 @@
-<div class="range_container">
-    <label [for]="range">Riga</label>
-    <input #range type="range" [min]="0" [max]="dataSource.length" [value]="0" class="slider" (input)="none()">
-    <span>{{range.value}}</span>
-</div>
-
-<div class="checkbox_container">
-    <label [for]="toggle">toggle</label>
-    <input #toggle type="checkbox" name="check" [checked]="true" (click)="onlyOne(toggle)">
-    <label [for]="select">select</label>
-    <input #select type="checkbox" name="check" (click)="onlyOne(select)">
-    <label [for]="unselect">unselect</label>
-    <input #unselect type="checkbox" name="check" (click)="onlyOne(unselect)">
-</div>
-
-<div class="buttons-container">
-    @for(name of easytable.columnsName(); track name) {
-    @if(toggle.checked) {
-    <button (click)="easytable.toggleCell(parseInt(range.value), name)">{{name}}</button>
-    }
-    @else if(select.checked) {
-    <button (click)="easytable.setSelectedCell(parseInt(range.value), name, true)">{{name}}</button>
-    }
-    @else if(unselect.checked) {
-    <button (click)="easytable.setSelectedCell(parseInt(range.value), name, false)">{{name}}</button>
-    }
-    }
-</div>
-
-<button (click)="easytable.toggleRow(2)">{{'Toggle row [row index: 2]'}}</button>
-
 <easy-table-paginator #paginator [pageSizeOptions]="[7,1,2,3,4,5,6,8,9,10]"></easy-table-paginator>
 
-<easy-table #easytable [easyTableDataSource]="dataSourceWithPagination" [footerSource]="footerSource"
-    easyTableSelectableRow [easyTableSelection]="initialSelection()" (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()">
+<easy-table [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
+    [footerSource]="footerSource" easyTableSelectableRow [easyTableSelection]="initialSelection()"
+    (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()">
 
     <easy-table-column name="counter_riga" easyTableColumnOnlyNecessarySpace>
         <ng-template easy-table-column-header></ng-template>
@@ -80,5 +50,5 @@
     <easy-table-column name="test" headerLabel="Test" easy-column-string></easy-table-column>
 
     <easy-table-column easy-column-sortable name="test2" headerLabel="Test 2" easy-column-number
-    easyTableSelectableCells [easyTableCellColorFN]="cellColorFN()" [precision]="2"></easy-table-column>
+        easyTableSelectableCells [easyTableCellColorFN]="cellColorFN()" [precision]="2"></easy-table-column>
 </easy-table>

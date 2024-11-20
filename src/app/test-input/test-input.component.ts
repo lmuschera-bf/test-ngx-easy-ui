@@ -73,7 +73,7 @@ const templateMEDIUMBase = [
 export class Pannello {
   private readonly panelContext: PanelContext<Pannello, string> = inject(PANEL_CONTEXT);
   constructor() { coloredLog('panel data', this.panelContext.data.trim()) }
-  chiudi() { this.panelContext.panelRef.close({ message: 'ciao Luca' }) }
+  chiudi() { this.panelContext.panelRef.close({ message: 'ciao' }) }
 }
 
 @Component({
@@ -82,7 +82,7 @@ export class Pannello {
   providers: [providePanelManager()],
   imports: [MatButtonModule, EasyButtonComponent, EasyControlModule, EasyInputModule,
     EasyFormModule, EasySelectModule, JsonPipe, EasySelectOptionDirective, EasyCheckModule,
-    GridModule, EasyTemporalModule, ProvaAttributiComponent, EasyUIFullFillDirective],
+    GridModule, EasyTemporalModule, EasyUIFullFillDirective],
   templateUrl: './test-input.component.html',
   styleUrl: './test-input.component.scss'
 })

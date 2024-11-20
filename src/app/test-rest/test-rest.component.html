@@ -1,0 +1,9 @@
+<div>{{'Who am I?'}}</div>
+
+@defer(when whoAmI()) {
+<div>{{'Im '}}{{whoAmI()}}</div>
+}
+
+@defer(when error()) {
+<div>{{'Error: '}}{{error()}}</div>
+}

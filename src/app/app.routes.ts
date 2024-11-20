@@ -15,5 +15,8 @@ export const routes: Routes = [
     },
     {
         path: 'albero', loadComponent: () => import(`./test-albero/test-albero.component`)
+    },
+    {
+        path: 'resttest', loadComponent: () => import(`./test-rest/test-rest.component`)
     }
 ];
