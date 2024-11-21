@@ -1,9 +1,15 @@
-<div>{{'Who am I?'}}</div>
+<button (click)="getWhoIAm()">Get Who I am</button>
 
-@defer(when whoAmI()) {
-<div>{{'Im '}}{{whoAmI()}}</div>
-}
+<div class="container">
+    <div>{{'Who am I? '}}
+        @defer(when whoAmI()) {
+        <span class="im">{{'Im '}}{{whoAmI()}}</span>
+        }
+    </div>
 
-@defer(when error()) {
-<div>{{'Error: '}}{{error()}}</div>
-}
+
+
+    @defer(when error()) {
+    <div>{{'Error: '}}{{error()}}</div>
+    }
+</div>

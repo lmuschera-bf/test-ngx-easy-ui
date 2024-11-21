@@ -7,7 +7,7 @@ type TestTable = {
   cognome: string;
   varie: string;
   test: string;
-  test2: number;
+  numero: number;
 }
 
 @Component({
@@ -37,34 +37,34 @@ export default class TestTabellaComponent {
   protected readonly cellSelectionParams: Signal<{ rowIndex: number, columnName: string }> = signal({ rowIndex: 2, columnName: 'test2' });
 
   protected dataSource: TestTable[] = [
-    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', test2: 2 },
-    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', test2: 2 },
-    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', test2: 2 },
-    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', test2: 3 },
-    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', test2: 2 },
-    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', test2: 0 },
-    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', test2: -1 },
-    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', test2: 3 },
+    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', numero: 2 },
+    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', numero: 2 },
+    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', numero: 2 },
+    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Lorenzo', cognome: 'Muscherà', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Giovanni', cognome: 'Mittone', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Gianluca', cognome: 'Basso', varie: '!"£', test: 'test3', numero: 3 },
+    { nome: 'Michele', cognome: 'Mosticchio', varie: ',.-', test: 'test4', numero: 2 },
+    { nome: 'Simone', cognome: 'Cavallini', varie: '123', test: 'test1', numero: 0 },
+    { nome: 'Andrea', cognome: 'Bianchi', varie: 'abc', test: 'test2', numero: -1 },
+    { nome: 'Paolo', cognome: 'Rossi', varie: '!"£', test: 'test3', numero: 3 },
   ];
 
   protected dataSourceWithPagination: EasyTableDataSource<TestTable> = new EasyTableDataSource(this.dataSource);
@@ -76,7 +76,7 @@ export default class TestTabellaComponent {
     cognome: '',
     varie: '',
     test: '',
-    test2: this.dataSource.map(x => x.test2).reduce((a, b) => a + b, 0)
+    numero: this.dataSource.map(x => x.numero).reduce((a, b) => a + b, 0)
   };
 
   protected rowColorFN: Signal<EasyTableRowColorFN<TestTable>> = signal((row: TestTable) => {
@@ -105,11 +105,11 @@ export default class TestTabellaComponent {
   });
 
   protected cellColorFN: Signal<EasyTableCellColorFN<TestTable>> = signal((row: TestTable) => {
-    if (row.test2 < 0) {
+    if (row.numero < 0) {
       return {
         background: '#cc0002'
       };
-    } else if (row.test2 > 0) {
+    } else if (row.numero > 0) {
       return {
         background: '#368364'
       };

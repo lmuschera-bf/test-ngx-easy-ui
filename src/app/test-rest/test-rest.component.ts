@@ -16,16 +16,15 @@ export default class TestRestComponent {
   protected readonly whoAmI: WritableSignal<string | undefined> = signal(undefined);
   protected readonly error: WritableSignal<string | undefined> = signal(undefined);
 
-  constructor() {
-    this.http.get('https://edp131.bofrost.it:8443/geocallapp/w/api/wstest/whoami', {
-      withCredentials: true, responseType: 'text'
-    }).pipe(catchError((response: HttpErrorResponse, error) => {
-      this.error.set(response.message);
-      this.whoAmI.set(undefined);
-      return throwError(() => error);
-    })).subscribe((whoAmI: string) => {
-      this.whoAmI.set(whoAmI);
-      this.error.set(undefined);
-    });
+  protected getWhoIAm(): void {
+    this.http.get('geocall:/api/wstest/whoami', { responseType: 'text' })
+      .pipe(catchError((response: HttpErrorResponse, error) => {
+        this.error.set(response.message);
+        this.whoAmI.set(undefined);
+        return throwError(() => error);
+      })).subscribe((whoAmI: string) => {
+        this.whoAmI.set(whoAmI);
+        this.error.set(undefined);
+      });
   }
 }
