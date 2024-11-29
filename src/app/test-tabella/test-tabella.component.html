@@ -1,10 +1,17 @@
 <easy-table-paginator #paginator [pageSizeOptions]="[7,1,2,3,4,5,6,8,9,10]"></easy-table-paginator>
 
 <div>
-
-    <easy-table [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
+    <easy-table #tabella [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
         [footerSource]="footerSource" easyTableSelectableRow [easyTableSelection]="initialSelection()"
-        (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()">
+        (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()" (easyTableCellDragEnd)="grab($event)">
+
+        <easy-table-operation-bar operation-bar title="Esempio">
+            <easy-table-button l-action (click)="tabella.selectAllRow(true)" icon="select_all"></easy-table-button>
+            <easy-table-button l-action (click)="tabella.selectAllRow(false)" icon="deselect"></easy-table-button>
+            <easy-table-button r-action
+                (click)="tabella.setSelectedCell(2, 'nome_cognome', true, {makeUnique: 'table'})"
+                icon="ads_click"></easy-table-button>
+        </easy-table-operation-bar>
 
         <easy-table-column name="counter_riga" easyTableColumnOnlyNecessarySpace>
             <ng-template easy-table-column-header></ng-template>
@@ -16,21 +23,22 @@
 
         <easy-table-column name="menu_riga" easyTableColumnOnlyNecessarySpace sticky>
             <ng-template easy-table-column-header></ng-template>
-            <ng-template easy-table-column-cell let-value="value" let-ri="rowIndex" let-rc="rowCounter">
-                <div easyUIFullFill flexCenter easyUIMouseOrTouchEventTrap>
-                    <mat-icon (click)="grab($event, ri, rc)" class="menu-icon" aria-hidden="false" aria-label="menu"
-                        fontIcon="menu"></mat-icon>
-                </div>
+            <ng-template easy-table-column-cell let-value="value" let-rowCounter="rowCounter" let-ri="rowIndex"
+                let-rc="rowCounter">
+                <easy-table-button [easyMenuTriggerFor]="menuRiga" [easyMenuContext]="{ri, rowCounter}"
+                    (click)="grab($event, ri, rc)" icon="menu">
+                </easy-table-button>
             </ng-template>
             <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
         </easy-table-column>
 
         <!-- Colonna calcolata -->
-        <easy-table-column name="nome_cognome" easyTableSelectableCells sticky>
+        <easy-table-column name="nome_cognome" easyTableSelectableCells (easyTableCellSelected)="grab($event)" sticky>
             <ng-template easy-table-column-header>Nominativo</ng-template>
             <ng-template easy-table-column-cell let-row="row">{{ row.nome }} {{ row.cognome
                 }}</ng-template>
             <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
+            <ng-template easy-table-column-cell-drag-placeholder let-row="row" [cellDragData]="{test: tabella}"> {{'row: ' + (row | json)}} </ng-template>
         </easy-table-column>
 
         <easy-table-column easy-column-sortable name="nome" easyTableSelectableCells>
@@ -52,7 +60,14 @@
         <easy-table-column name="test" headerLabel="Test" easy-column-string></easy-table-column>
 
         <easy-table-column easy-column-sortable name="numero" headerLabel="Numero" easy-column-number
-            easyTableSelectableCells [easyTableCellColorFN]="cellColorFN()" [precision]="2" stickyEnd></easy-table-column>
+            easyTableSelectableCells [easyTableCellColorFN]="cellColorFN()" [precision]="2"
+            stickyEnd></easy-table-column>
     </easy-table>
 
 </div>
+
+<easy-menu #menuRiga="easyMenu">
+    <easy-menu-item (click)="grab($event)"> Edit </easy-menu-item>
+    <easy-menu-item (click)="grab($event, menuRiga.context)">{{'rowCounter: ' + (menuRiga.context?.rowCounter ??
+        'rowCounter not found')}}</easy-menu-item>
+</easy-menu>

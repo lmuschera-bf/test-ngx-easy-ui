@@ -1,9 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, inject, OnDestroy, signal, Signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { EasyTreeDataSource, EasyTreeFileSistemNodeComponent, EasyTreeFileSystemNode, EasyTreeModule, EasyTreeNode, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
 import { Subject, takeUntil } from 'rxjs';
-import { MatTreeModule } from '@angular/material/tree';
 
 type FruitNode = {
   name: string;
@@ -124,7 +122,7 @@ class Pannello {
   selector: 'test-albero',
   standalone: true,
   providers: [providePanelManager()],
-  imports: [EasyTreeModule, MatIconModule, EasyTreeFileSistemNodeComponent, MatTreeModule],
+  imports: [EasyTreeModule, EasyTreeFileSistemNodeComponent],
   templateUrl: './test-albero.component.html',
   styleUrl: './test-albero.component.scss'
 })

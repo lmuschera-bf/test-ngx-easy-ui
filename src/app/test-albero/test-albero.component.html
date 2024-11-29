@@ -17,20 +17,3 @@
         <easy-tree-file-sistem-node [type]="node.data.type" [name]="node.data.name" (click)="showNode(node)" />
     </ng-template>
 </easy-tree>
-
-<mat-tree [attr.easyui]="''" [attr.easytree]="''" #tree [dataSource]="dataSource().data"
-    [childrenAccessor]="dataSource().childrenAccessor">
-    <!-- This is the tree node template for leaf nodes -->
-    <mat-tree-node #nodo class="easy-tree-node" *matTreeNodeDef="let node" matTreeNodePadding matTreeNodeToggle [attr.easy-tree-depth]="node.depth">
-        <!-- use a disabled button to provide padding for tree leaf -->
-        {{node.data.name}}
-    </mat-tree-node>
-    <!-- This is the tree node template for expandable nodes -->
-    <mat-tree-node #nodo class="easy-tree-node" *matTreeNodeDef="let node;when: dataSource().hasChild"
-        matTreeNodePadding matTreeNodeToggle [attr.easy-tree-depth]="node.depth">
-        <div class="box">
-            <div class="line-in.the-box"></div>
-        </div>
-        {{node.data.name}}
-    </mat-tree-node>
-</mat-tree>

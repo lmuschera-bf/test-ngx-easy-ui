@@ -1,15 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { EasyButtonComponent, EasyMenuModule, EasyToolbarModule } from '@ngx-easy-ui/components';
 import { EasyTheme, EasyThemeService, ProvidedThemeName, ThemeName, getEasyTheme } from '@ngx-easy-ui/themes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatMenuModule, MatButtonModule, MatToolbarModule, MatIconModule],
+  imports: [RouterOutlet, EasyToolbarModule, EasyMenuModule, EasyButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,27 +1,27 @@
-<mat-toolbar color="accent">
-    <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon"
-        aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>Test EasyUI</span>
-    <button [matMenuTriggerFor]="menuTemi" mat-icon-button class="example-icon"
-        aria-label="Example icon-button with menu icon">
-        <mat-icon>palette</mat-icon>
-    </button>
-</mat-toolbar>
+<easy-toolbar title="Test EasyUI">
+    <easy-button l-action [easyMenuTriggerFor]="menu" easy-button-icon class="example-icon">
+        menu
+    </easy-button>
+    <easy-button r-action [easyMenuTriggerFor]="menuTemi" easy-button-icon class="example-icon">
+        palette
+    </easy-button>
+</easy-toolbar>
 
-<mat-menu #menu="matMenu">
-    <button (click)="to('tabella')" mat-menu-item>Tabella</button>
-    <button (click)="to('input')" mat-menu-item>Input</button>
-    <button (click)="to('buttons')" mat-menu-item>Bottoni</button>
-    <button (click)="to('albero')" mat-menu-item>Tree</button>
-    <button (click)="to('resttest')" mat-menu-item>Rest test</button>
-</mat-menu>
+<easy-menu #menu="easyMenu">
+    <easy-menu-item (click)="to('tabella')">Tabella</easy-menu-item>
+    <easy-menu-item (click)="to('input')">Input</easy-menu-item>
+    <easy-menu-item (click)="to('buttons')">Bottoni</easy-menu-item>
+    <easy-menu-item (click)="to('albero')">Tree</easy-menu-item>
+    <easy-menu-item (click)="to('resttest')">Rest test</easy-menu-item>
+</easy-menu>
 
-<mat-menu #menuTemi="matMenu">
+<easy-menu #menuTemi="easyMenu">
     @for(tema of temi; track tema) {
-    <button [attr.currenttheme]="tema.name === current ? '': null" (click)="cambiaTema(tema)" mat-menu-item>{{tema.name}}</button>
+    <easy-menu-item [attr.currenttheme]="tema.name === current ? '': null" (click)="cambiaTema(tema)">
+        {{tema.name}}
+    </easy-menu-item>
+    <!-- <easy-button [attr.currenttheme]="tema.name === current ? '': null" (click)="cambiaTema(tema)" mat-menu-item>{{tema.name}}</easy-button> -->
     }
-</mat-menu>
+</easy-menu>
 
 <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
+import { JsonPipe } from '@angular/common';
 import { Component, signal, Signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableRowColorFN, EasyUIClickTrap, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyMenuModule, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
 
 type TestTable = {
   nome: string;
@@ -13,7 +13,7 @@ type TestTable = {
 @Component({
   selector: 'app-test-tabella',
   standalone: true,
-  imports: [EasyTableModule, EasyUIFullFillDirective, EasyUIClickTrap, MatIconModule],
+  imports: [EasyTableModule, EasyUIFullFillDirective, EasyTableOperationBarComponent, EasyMenuModule, JsonPipe],
   templateUrl: './test-tabella.component.html',
   styleUrls: ['./test-tabella.component.scss', './range.scss']
 })

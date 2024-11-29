@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, signal, WritableSignal } from '@angular/core';
+import { GEOCALL_CALL_PREFIX } from '@ngx-bofrost/geocall-remote-call';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
@@ -17,7 +18,7 @@ export default class TestRestComponent {
   protected readonly error: WritableSignal<string | undefined> = signal(undefined);
 
   protected getWhoIAm(): void {
-    this.http.get('geocall:/api/wstest/whoami', { responseType: 'text' })
+    this.http.get(`${GEOCALL_CALL_PREFIX}/api/wstest/whoami`, { responseType: 'text' })
       .pipe(catchError((response: HttpErrorResponse, error) => {
         this.error.set(response.message);
         this.whoAmI.set(undefined);

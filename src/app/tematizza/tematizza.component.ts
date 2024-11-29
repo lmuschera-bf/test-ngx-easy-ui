@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { EasyButtonComponent } from '@ngx-easy-ui/components';
 import { EasyTheme, EasyThemeService, ProvidedThemeName, getEasyTheme } from '@ngx-easy-ui/themes';
 
 @Component({
   selector: 'tematizza',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [EasyButtonComponent],
   templateUrl: './tematizza.component.html',
   styleUrl: './tematizza.component.scss'
 })

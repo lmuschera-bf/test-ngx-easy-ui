@@ -1,4 +1,7 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/*
+    useDefineForClassFields = true -> https://www.typescriptlang.org/tsconfig#useDefineForClassFields
+    experimentalDecorators non presente -> https://www.typescriptlang.org/tsconfig#experimentalDecorators
+*/
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -13,7 +16,6 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "experimentalDecorators": false,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",

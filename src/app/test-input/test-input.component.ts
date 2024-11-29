@@ -1,8 +1,6 @@
 import { JsonPipe } from '@angular/common';
-import { Component, Signal, ViewChild, WritableSignal, computed, effect, inject, signal, viewChild } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyUIFullFillDirective, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager, EasyControl, EasyControlComponent } from '@ngx-easy-ui/components';
-import { ProvaAttributiComponent } from './prova-attributi/prova-attributi.component';
+import { Component, Signal, ViewChild, computed, effect, inject, viewChild } from '@angular/core';
+import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyControlComponent, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, EasyUIFullFillDirective, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
 
 export type SelectSample = {
   id: number,
@@ -80,7 +78,7 @@ export class Pannello {
   selector: 'test-easy-ui-input',
   standalone: true,
   providers: [providePanelManager()],
-  imports: [MatButtonModule, EasyButtonComponent, EasyControlModule, EasyInputModule,
+  imports: [EasyButtonComponent, EasyControlModule, EasyInputModule,
     EasyFormModule, EasySelectModule, JsonPipe, EasySelectOptionDirective, EasyCheckModule,
     GridModule, EasyTemporalModule, EasyUIFullFillDirective],
   templateUrl: './test-input.component.html',

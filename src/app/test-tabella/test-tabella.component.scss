@@ -42,3 +42,9 @@
         }
     }
 }
+
+.easy-table-operation-bar mat-toolbar.mat-toolbar.mat-toolbar-single-row {
+    min-height: var(--easy-table-operation-bar-height, 30px);
+    background: var(--easy-table-operation-bar-background, #f5f5f5);
+
+}
