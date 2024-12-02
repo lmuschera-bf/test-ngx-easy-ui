@@ -7,7 +7,7 @@ import { easyThemeProvider } from '@ngx-easy-ui/themes';
 export const geocallConfig: ApplicationConfig = {
   providers: [
     provideDateLocale('en-GB'),
-    easyThemeProvider({ defaultTheme: 'BoFrost' }),
+    easyThemeProvider({ defaultTheme: 'bofrost' }),
     provideGeocallFixedBasePath(import.meta.env['NG_APP_GEOCALL_DEV_PATH']),
     provideHttpClient(withFetch(), withInterceptors([geocallRemoteCall(GeocallRemoteCallType.COOKIES)])),
   ]
