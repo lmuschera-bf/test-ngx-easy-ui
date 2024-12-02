@@ -3,7 +3,8 @@
 <div>
     <easy-table #tabella [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
         [footerSource]="footerSource" easyTableSelectableRow [easyTableSelection]="initialSelection()"
-        (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()" (easyTableCellDragEnd)="grab($event)">
+        (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()"
+        (easyTableCellDragStart)="grab($event)" (easyTableCellDragEnd)="grab($event)">
 
         <easy-table-operation-bar operation-bar title="Esempio">
             <easy-table-button l-action (click)="tabella.selectAllRow(true)" icon="select_all"></easy-table-button>

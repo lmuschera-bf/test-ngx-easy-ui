@@ -42,8 +42,8 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3(@angular/common@19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))
       '@ngx-easy-ui/components':
-        specifier: ^0.0.1-next.beta.519
-        version: 0.0.1-next.beta.519
+        specifier: ^0.0.1-next.beta.522
+        version: 0.0.1-next.beta.522
       '@ngx-easy-ui/themes':
         specifier: ^0.0.1-next.54
         version: 0.0.1-next.54(@angular/cdk@19.0.0(@angular/common@19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/common@19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(@angular/material@19.0.0(2bzxc2ic5id365qpbi3j4l5rra))
@@ -1445,8 +1445,8 @@ packages:
       '@angular/common': ^19.0.0
       '@angular/core': ^19.0.0
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.519':
-    resolution: {integrity: sha512-UKcmzbs6NoKEl7pp6xi8kNCMNbK4dfmaqFWi8C8+xFfNzyJdkvnQPPoZlO5fIxu0RmDXJH3ape5DMYlbKStQ/Q==}
+  '@ngx-easy-ui/components@0.0.1-next.beta.522':
+    resolution: {integrity: sha512-wsW2IIldh8/IH1twvD9miqJ+1y1G51Lxaa2KFU+wwWelLiNv1KVi4w2NOwl1PjIRabUVauhWQ+rt5renkK05qg==}
 
   '@ngx-easy-ui/themes@0.0.1-next.54':
     resolution: {integrity: sha512-WEdk1yjE6vd0v62TXCWHlwexu4rCIAMqTzsj+sjc9w2pRpQTjUcazg2YAvQjdrOoE9sujMgR4mSKyqc/1H9PPg==}
@@ -5945,7 +5945,7 @@ snapshots:
       '@angular/core': 19.0.0(rxjs@7.8.1)(zone.js@0.15.0)
       tslib: 2.8.1
 
-  '@ngx-easy-ui/components@0.0.1-next.beta.519':
+  '@ngx-easy-ui/components@0.0.1-next.beta.522':
     dependencies:
       tslib: 2.8.1
 
