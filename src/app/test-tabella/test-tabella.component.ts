@@ -1,6 +1,5 @@
-import { JsonPipe } from '@angular/common';
 import { Component, signal, Signal } from '@angular/core';
-import { EasyMenuModule, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyMenuModule, EasyTabelCellDragEnterPredicateFN, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
 
 type TestTable = {
   nome: string;
@@ -13,7 +12,7 @@ type TestTable = {
 @Component({
   selector: 'app-test-tabella',
   standalone: true,
-  imports: [EasyTableModule, EasyUIFullFillDirective, EasyTableOperationBarComponent, EasyMenuModule, JsonPipe],
+  imports: [EasyTableModule, EasyUIFullFillDirective, EasyTableOperationBarComponent, EasyMenuModule],
   templateUrl: './test-tabella.component.html',
   styleUrls: ['./test-tabella.component.scss', './range.scss']
 })
@@ -118,7 +117,14 @@ export default class TestTabellaComponent {
   });
 
   protected grab(...values: any[]) {
-    console.log('values', values);
+    console.log('values', ...values);
+  }
+
+  protected dropPredicate: EasyTabelCellDragEnterPredicateFN<TestTable> = (source: TestTable, columnName: string, element: HTMLElement) => {
+    if (source.nome === 'Giovanni') {
+      return false;
+    }
+    return true;
   }
 
 }

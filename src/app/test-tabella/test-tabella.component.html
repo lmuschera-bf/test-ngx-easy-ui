@@ -1,10 +1,11 @@
 <easy-table-paginator #paginator [pageSizeOptions]="[7,1,2,3,4,5,6,8,9,10]"></easy-table-paginator>
 
-
 <easy-table #tabella [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
     [footerSource]="footerSource" easyTableSelectableRow [easyTableSelection]="initialSelection()"
-    (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()" (easyTableCellDragStart)="grab($event)"
-    (easyTableCellDragEnd)="grab($event)">
+    (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()"
+    (easyTableCellDragStart)="grab('dragStart', $event)" (easyTableCellDragEnd)="grab('dragEnd', $event)"
+    (easyTableCellDragEnter)="grab('dragEnter', $event)" (easyTableCellDragExit)="grab('dragExit', $event)"
+    (easyTableCellDragFinally)="grab('dragFinally', $event)">
 
     <easy-table-operation-bar operation-bar title="Esempio">
         <easy-table-button l-action (click)="tabella.selectAllRow(true)" icon="select_all"></easy-table-button>
@@ -33,23 +34,24 @@
     </easy-table-column>
 
     <!-- Colonna calcolata -->
-    <easy-table-column name="nome_cognome" easyTableSelectableCells (easyTableCellSelected)="grab($event)" sticky>
+    <easy-table-column name="nome_cognome" easyTableSelectableCells (easyTableCellSelected)="grab($event)" sticky
+        easy-table-column-cell-drag [cellDragData]="{test: tabella}" easy-table-column-cell-drop
+        [easyTabelCellDropPredicate]="dropPredicate">
         <ng-template easy-table-column-header>Nominativo</ng-template>
         <ng-template easy-table-column-cell let-row="row">{{ row.nome }} {{ row.cognome
             }}</ng-template>
         <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
-        <ng-template easy-table-column-cell-drag-placeholder let-row="row" [cellDragData]="{test: tabella}"> {{'row: ' +
-            (row | json)}} </ng-template>
+        <ng-template easy-table-column-cell-drag-element let-ri="rowIndex"> {{'row: ' + ri}} </ng-template>
     </easy-table-column>
 
-    <easy-table-column easy-column-sortable name="nome" easyTableSelectableCells>
+    <easy-table-column easy-column-sortable name="nome" easyTableSelectableCells easy-table-column-cell-drag>
         <ng-template easy-table-column-header>Nome</ng-template>
         <ng-template easy-table-column-cell let-value="value" let-ri="rowIndex" (click)="grab($event)">{{ value
             }}</ng-template>
         <ng-template easy-table-column-footer let-value="value" let-footer="footer">{{ value }}</ng-template>
     </easy-table-column>
 
-    <easy-table-column name="cognome">
+    <easy-table-column name="cognome" easy-table-column-cell-drop [easyTabelCellDropPredicate]="dropPredicate">
         <ng-template easy-table-column-header>Cognome</ng-template>
         <ng-template easy-table-column-cell let-value="value">{{ value }}</ng-template>
     </easy-table-column>
