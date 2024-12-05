@@ -23,7 +23,7 @@
     "@angular/router": "^19.0.0",
     "@angular/ssr": "^19.0.0",
     "@ngx-bofrost/geocall-remote-call": "^0.0.3",
-    "@ngx-easy-ui/components": "^0.0.1-next.beta.595",
+    "@ngx-easy-ui/components": "^0.0.1-next.beta.609",
     "@ngx-easy-ui/themes": "^0.0.1-next.57",
     "express": "^4.18.2",
     "ngx-mat-timepicker": "github:lorenzomusche/ngx-mat-timepicker#v19.0.0_build_0.0.1",

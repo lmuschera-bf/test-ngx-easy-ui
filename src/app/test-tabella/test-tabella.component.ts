@@ -1,5 +1,5 @@
 import { Component, signal, Signal } from '@angular/core';
-import { EasyMenuModule, EasyTabelCellDragEnterPredicateFN, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyMenuModule, EasyTabelCellDropPredicateFN, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
 
 type TestTable = {
   nome: string;
@@ -120,7 +120,7 @@ export default class TestTabellaComponent {
     console.log('values', ...values);
   }
 
-  protected dropPredicate: EasyTabelCellDragEnterPredicateFN<TestTable> = (source: TestTable, columnName: string, element: HTMLElement) => {
+  protected dropPredicate: EasyTabelCellDropPredicateFN<TestTable> = (source: TestTable, columnName: string, element: HTMLElement) => {
     if (source.nome === 'Giovanni') {
       return false;
     }

@@ -3,14 +3,14 @@
 <easy-table #tabella [paginator]="paginator.paginator()" [easyTableDataSource]="dataSourceWithPagination"
     [footerSource]="footerSource" easyTableSelectableRow [easyTableSelection]="initialSelection()"
     (easyTableRowSelection)="grab($event)" [easyTableRowColorFN]="rowColorFN()"
-    (easyTableCellDragStart)="grab('dragStart', $event)" (easyTableCellDragEnd)="grab('dragEnd', $event)"
-    (easyTableCellDragEnter)="grab('dragEnter', $event)" (easyTableCellDragExit)="grab('dragExit', $event)"
-    (easyTableCellDragFinally)="grab('dragFinally', $event)">
+    (easyTableCellDragStart)="grab('dragStart', $event)" (easyTableCellDrop)="grab('drop', $event)"
+    (easyTableCellDragEnd)="grab('dragEnd', $event)" (easyTableCellDragEnter)="grab('dragEnter', $event)"
+    (easyTableCellDragExit)="grab('dragExit', $event)">
 
     <easy-table-operation-bar operation-bar title="Esempio">
-        <easy-table-button l-action (click)="tabella.selectAllRow(true)" icon="select_all"></easy-table-button>
-        <easy-table-button l-action (click)="tabella.selectAllRow(false)" icon="deselect"></easy-table-button>
-        <easy-table-button r-action (click)="tabella.setSelectedCell(2, 'nome_cognome', true, {makeUnique: 'table'})"
+        <easy-table-button l-action (click)="tabella.selectionAgent().setSelectionOnAllRows(true)" icon="select_all"></easy-table-button>
+        <easy-table-button l-action (click)="tabella.selectionAgent().setSelectionOnAllRows(false)" icon="deselect"></easy-table-button>
+        <easy-table-button r-action (click)="tabella.selectionAgent().setSelectionOnCell(2, 'nome_cognome', true, {makeUnique: 'table'})"
             icon="ads_click"></easy-table-button>
     </easy-table-operation-bar>
 
