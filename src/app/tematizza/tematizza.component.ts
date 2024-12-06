@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { EasyButtonComponent } from '@ngx-easy-ui/components';
+import { EasyButtonComponent } from '@ngx-easy-ui/components/easy-ui-button';
 import { EasyTheme, EasyThemeService, ProvidedThemeName, getEasyTheme } from '@ngx-easy-ui/themes';
 
 @Component({

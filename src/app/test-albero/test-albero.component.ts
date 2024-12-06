@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, inject, OnDestroy, signal, Signal } from '@angular/core';
-import { EasyTreeDataSource, EasyTreeFileSistemNodeComponent, EasyTreeFileSystemNode, EasyTreeModule, EasyTreeNode, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
+import { EasyTreeFileSystemNode, EasyTreeNode, EasyTreeModule, EasyTreeFileSistemNodeComponent, EasyTreeDataSource } from '@ngx-easy-ui/components/easy-ui-tree';
+import { providePanelManager, PanelContext, providePanelContext, PanelManager, PANEL_MANAGER, PANEL_CONTEXT } from '@ngx-easy-ui/components/easy-ui-panel';
 import { Subject, takeUntil } from 'rxjs';
 
 type FruitNode = {

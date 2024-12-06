@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { EasyButtonComponent, EasyMenuModule, EasyToolbarModule } from '@ngx-easy-ui/components';
+import { EasyButtonComponent } from '@ngx-easy-ui/components/easy-ui-button';
+import { EasyMenuModule } from '@ngx-easy-ui/components/easy-ui-menu';
 import { EasyTheme, EasyThemeService, ProvidedThemeName, ThemeName, getEasyTheme } from '@ngx-easy-ui/themes';
+import { EasyToolbarModule } from '@ngx-easy-ui/components/easy-ui-toolbar';
 
 @Component({
   selector: 'app-root',

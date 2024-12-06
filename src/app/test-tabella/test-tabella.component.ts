@@ -1,5 +1,7 @@
 import { Component, signal, Signal } from '@angular/core';
-import { EasyMenuModule, EasyTabelCellDropPredicateFN, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN, EasyUIFullFillDirective } from '@ngx-easy-ui/components';
+import { EasyUIFullFillDirective } from '@ngx-easy-ui/components/easy-ui-directive';
+import { EasyTabelCellDropPredicateFN, EasyTableCellColorFN, EasyTableDataSource, EasyTableModule, EasyTableOperationBarComponent, EasyTableRowColorFN } from '@ngx-easy-ui/components/easy-ui-table';
+import { EasyMenuModule } from '@ngx-easy-ui/components/easy-ui-menu';
 
 type TestTable = {
   nome: string;

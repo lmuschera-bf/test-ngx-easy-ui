@@ -8,6 +8,7 @@
     (easyTableCellDragExit)="grab('dragExit', $event)">
 
     <easy-table-operation-bar operation-bar title="Esempio">
+        <easy-table-button [easyMenuTriggerFor]="menuRiga" l-action (click)="grab('menu testata tabella', $event)" icon="menu"></easy-table-button>
         <easy-table-button l-action (click)="tabella.selectionAgent().setSelectionOnAllRows(true)" icon="select_all"></easy-table-button>
         <easy-table-button l-action (click)="tabella.selectionAgent().setSelectionOnAllRows(false)" icon="deselect"></easy-table-button>
         <easy-table-button r-action (click)="tabella.selectionAgent().setSelectionOnCell(2, 'nome_cognome', true, {makeUnique: 'table'})"

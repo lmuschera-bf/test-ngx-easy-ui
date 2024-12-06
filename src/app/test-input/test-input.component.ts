@@ -1,6 +1,11 @@
 import { JsonPipe } from '@angular/common';
 import { Component, Signal, ViewChild, computed, effect, inject, viewChild } from '@angular/core';
-import { DimensionTemplates, EasyButtonComponent, EasyCheckModule, EasyControlComponent, EasyControlModule, EasyFormComponent, EasyFormModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, EasyUIFullFillDirective, GridModule, GridTemplate, PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, SelectController, TipoBreakPoint, providePanelContext, providePanelManager } from '@ngx-easy-ui/components';
+import { EasyButtonComponent } from '@ngx-easy-ui/components/easy-ui-button';
+import { EasyCheckModule, EasyControlComponent, EasyControlModule, EasyInputModule, EasySelectModule, EasySelectOptionDirective, EasyTemporalModule, SelectController } from '@ngx-easy-ui/components/easy-ui-control';
+import { DimensionTemplates, EasyUIFullFillDirective, GridModule, GridTemplate } from '@ngx-easy-ui/components/easy-ui-directive';
+import { EasyFormComponent, EasyFormModule } from '@ngx-easy-ui/components/easy-ui-form';
+import { PANEL_CONTEXT, PANEL_MANAGER, PanelContext, PanelManager, providePanelContext, providePanelManager } from '@ngx-easy-ui/components/easy-ui-panel';
+import { TipoBreakPoint } from '@ngx-easy-ui/components/utils';
 
 export type SelectSample = {
   id: number,
